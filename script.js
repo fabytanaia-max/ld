@@ -259,7 +259,7 @@ function setupWhatsAppLinks() {
   const base = buildWhatsAppLink(baseWhatsAppMessage());
   el.waTop.href = base;
   el.waBottom.href = base;
-  el.waHighlight.href = buildWhatsAppLink("Olá Lucas Digital! Quero mais detalhes do Lenovo Legion R7000 AHP9 (169.900 ECV).");
+  el.waHighlight.href = SALES_PAGE;
   el.waFloat.addEventListener("click", () => window.open(base, "_blank", "noopener"));
 }
 
@@ -284,6 +284,7 @@ function init() {
 }
 
 init();
+
 
 
 
