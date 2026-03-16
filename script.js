@@ -220,7 +220,7 @@ function renderProducts() {
       </div>
       <div class="product-name">${item.name}</div>
       <div class="product-meta">${categoryMeta[item.category].label}</div>
-      <div class="product-price">${formatCVE(item.price)}</div>
+      <div class="product-price">----</div>
       <div class="product-actions">
         <button class="btn-light" data-view="${item.id}">Ver detalhes</button>
         <a class="btn btn-solid" href="${SALES_PAGE}">Ver planos do marketplace</a>
@@ -247,7 +247,7 @@ function openModal(id) {
       <h3>${item.name}</h3>
       <p class="muted">${categoryMeta[item.category].label}</p>
       <p>${item.description}</p>
-      <div class="modal-price">${formatCVE(item.price)}</div>
+      <div class="modal-price">----</div>
       <a class="btn btn-solid" href="${SALES_PAGE}">Ver planos do marketplace</a>
     </div>
   `;
@@ -256,11 +256,13 @@ function openModal(id) {
 }
 
 function setupWhatsAppLinks() {
-  const base = buildWhatsAppLink(baseWhatsAppMessage());
-  el.waTop.href = base;
-  el.waBottom.href = base;
+  
+  el.waTop.href = SALES_PAGE;
+  el.waBottom.href = SALES_PAGE;
   el.waHighlight.href = SALES_PAGE;
-  el.waFloat.addEventListener("click", () => window.open(base, "_blank", "noopener"));
+  el.waFloat.addEventListener("click", () => {
+    window.location.href = SALES_PAGE;
+  });
 }
 
 function init() {
@@ -284,6 +286,7 @@ function init() {
 }
 
 init();
+
 
 
 
