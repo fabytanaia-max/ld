@@ -1,4 +1,5 @@
-﻿const CONSULT_PAGE = "./consultar-precos.html";
+﻿const WHATSAPP_NUMBER = "2385888880";
+const SALES_PAGE = "./planos.html";
 
 const products = [
   {
@@ -222,7 +223,7 @@ function renderProducts() {
       <div class="product-price">${formatCVE(item.price)}</div>
       <div class="product-actions">
         <button class="btn-light" data-view="${item.id}">Ver detalhes</button>
-        <a class="btn btn-solid" href="${CONSULT_PAGE}">Consultar preço</a>
+        <a class="btn btn-solid" href="${SALES_PAGE}">Ver planos do marketplace</a>
       </div>
     </article>
   `
@@ -247,7 +248,7 @@ function openModal(id) {
       <p class="muted">${categoryMeta[item.category].label}</p>
       <p>${item.description}</p>
       <div class="modal-price">${formatCVE(item.price)}</div>
-      <a class="btn btn-solid" href="${CONSULT_PAGE}">Ir para consulta de preços</a>
+      <a class="btn btn-solid" href="${SALES_PAGE}">Ver planos do marketplace</a>
     </div>
   `;
 
@@ -255,12 +256,11 @@ function openModal(id) {
 }
 
 function setupWhatsAppLinks() {
-  el.waTop.href = CONSULT_PAGE;
-  el.waBottom.href = CONSULT_PAGE;
-  el.waHighlight.href = CONSULT_PAGE;
-  el.waFloat.addEventListener("click", () => {
-    window.location.href = CONSULT_PAGE;
-  });
+  const base = buildWhatsAppLink(baseWhatsAppMessage());
+  el.waTop.href = base;
+  el.waBottom.href = base;
+  el.waHighlight.href = buildWhatsAppLink("Olá Lucas Digital! Quero mais detalhes do Lenovo Legion R7000 AHP9 (169.900 ECV).");
+  el.waFloat.addEventListener("click", () => window.open(base, "_blank", "noopener"));
 }
 
 function init() {
@@ -284,6 +284,9 @@ function init() {
 }
 
 init();
+
+
+
 
 
 
