@@ -1,4 +1,4 @@
-﻿const WHATSAPP_NUMBER = "2385888880";
+﻿const CONSULT_PAGE = "./consultar-precos.html";
 
 const products = [
   {
@@ -222,7 +222,7 @@ function renderProducts() {
       <div class="product-price">${formatCVE(item.price)}</div>
       <div class="product-actions">
         <button class="btn-light" data-view="${item.id}">Ver detalhes</button>
-        <a class="btn btn-solid" href="${buildWhatsAppLink(`Olá Lucas Digital! Quero o produto: ${item.name} (${formatCVE(item.price)}).`)}" target="_blank" rel="noopener">Pedir</a>
+        <a class="btn btn-solid" href="${CONSULT_PAGE}">Consultar preço</a>
       </div>
     </article>
   `
@@ -247,7 +247,7 @@ function openModal(id) {
       <p class="muted">${categoryMeta[item.category].label}</p>
       <p>${item.description}</p>
       <div class="modal-price">${formatCVE(item.price)}</div>
-      <a class="btn btn-solid" href="${buildWhatsAppLink(`Olá! Tenho interesse no ${item.name}. Podemos fechar hoje?`)}" target="_blank" rel="noopener">Comprar agora no WhatsApp</a>
+      <a class="btn btn-solid" href="${CONSULT_PAGE}">Ir para consulta de preços</a>
     </div>
   `;
 
@@ -255,11 +255,12 @@ function openModal(id) {
 }
 
 function setupWhatsAppLinks() {
-  const base = buildWhatsAppLink(baseWhatsAppMessage());
-  el.waTop.href = base;
-  el.waBottom.href = base;
-  el.waHighlight.href = buildWhatsAppLink("Olá Lucas Digital! Quero mais detalhes do Lenovo Legion R7000 AHP9 (169.900 ECV).");
-  el.waFloat.addEventListener("click", () => window.open(base, "_blank", "noopener"));
+  el.waTop.href = CONSULT_PAGE;
+  el.waBottom.href = CONSULT_PAGE;
+  el.waHighlight.href = CONSULT_PAGE;
+  el.waFloat.addEventListener("click", () => {
+    window.location.href = CONSULT_PAGE;
+  });
 }
 
 function init() {
@@ -283,6 +284,7 @@ function init() {
 }
 
 init();
+
 
 
 

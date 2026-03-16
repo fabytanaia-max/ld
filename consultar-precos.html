@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lucas Digital | Consultar preços</title>
+  <meta name="description" content="Consulte disponibilidade e preços atualizados dos produtos da Lucas Digital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="./index.html" class="brand" aria-label="Lucas Digital Home">
+        <img class="brand-logo" src="./assets/brand/logo-lucas-digital.webp" alt="Logo Lucas Digital" loading="eager" decoding="async" />
+        <span class="brand-name">Lucas Digital</span>
+      </a>
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="./index.html#categorias">Categorias</a>
+        <a href="./index.html#produtos">Produtos</a>
+        <a href="./index.html#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-solid" href="./index.html">Voltar ao catálogo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">CONSULTA RÁPIDA</p>
+          <h1>Consultar preço e disponibilidade</h1>
+          <p class="lead">Os preços e o estoque mudam rápido. Para receber o valor atualizado do produto que quer, fale diretamente conosco.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" target="_blank" rel="noopener" href="https://wa.me/2389554721?text=Ol%C3%A1%2C%20tenho%20interesse%20nos%20produtos%20da%20Lucas%20Digital%20e%20quero%20consultar%20pre%C3%A7os%20e%20disponibilidade.">Consultar no WhatsApp</a>
+            <a class="btn btn-ghost" href="./index.html">Voltar ao catálogo</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Como funciona">
+          <p class="card-label">Como funciona</p>
+          <h3>Atendimento direto e rápido</h3>
+          <p>Envia o nome do produto e retornamos com preço atualizado, disponibilidade e próxima orientação de compra.</p>
+          <div class="hero-price">Resposta média em 24h</div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>© <span id="year"></span> Lucas Digital. Todos os direitos reservados.</p>
+      <p class="muted">Marketplace Lucas Digital</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
